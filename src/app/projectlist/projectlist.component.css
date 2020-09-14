@@ -1,0 +1,96 @@
+.labelclass{ 
+    font-size: 14px;
+    /* align-items: center; */
+    margin-left: 45px;
+    color: brown;
+}
+
+.alignbutton {
+    margin-left: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive{
+        margin-top: 20px;
+    }
+
+    .sidePanel{
+        margin-left: 27px;
+        width: 190px;
+        max-height: 550px;
+    }
+
+}
+
+@media only screen and (max-width: 699px) and (min-width: 570px) {
+    .cardresponsive {
+        margin-left: 130px;
+    }
+}
+ @media only screen and (max-width: 700px) and (min-width: 500px) {
+    .responsive{
+         margin-top: 20px;
+     }
+
+     .sidePanel{
+        margin-left: 27px;
+        width: 190px;
+        max-height: 550px;
+    }
+ }
+
+ @media only screen and (max-width: 1200px) and (min-width: 700px) {
+    .cardresponsive {
+        margin-left: 91px;
+    }
+  }
+
+ img {
+    width: 190px;
+    margin: auto;
+ }
+
+ .btn {
+     background: lightgreen;
+     color: black;
+ }
+.tilesClass {
+    line-height: normal;
+}
+ .sidePanel {
+    background: white;
+    color: black;
+    width: 190px;
+    max-height: 550px;
+}
+
+.nodata {
+    margin: 25%;
+}
+
+.topmargin{
+    margin-top: 10px;
+}
+
+.button-size {
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+
+.successLaunch { 
+    margin-left: 20px;
+    font-size: 14px;
+    color: brown
+}
+
+.example-card {
+    background: white;
+    color: black;
+    width: 210px;
+    margin-left: 14px;
+    max-width: 300px;
+    margin-bottom: 50px;
+    float: left;
+    height: 470px;
+  }
+ 

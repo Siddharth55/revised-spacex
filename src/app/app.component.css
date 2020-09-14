@@ -1,0 +1,13 @@
+.alignCenter {
+    text-align: center;
+}
+
+.headeralign{
+    margin-left: 27px;
+}
+
+@media only screen and (max-width: 435px) {
+    .headeralign{
+         margin-left: 70px;
+     }
+ }

@@ -1,0 +1,76 @@
+<div class="container" style="margin-left: 30px;">
+    <div class="row">
+         <div class="col-sm-2">     
+            <mat-card class="sidePanel">
+                <h4>Filters</h4>
+                <u style="color: darkgreen;"><span class="labelclass">Launch Year</span></u>
+                <div>
+                    <form class="topmargin">
+                        <button mat-button id="2006" value = "2006" name="2006" (click) = "getFirstYearValue($event.target.value)" class="btn btn-success btn-sm button-size">2006</button>
+                        <button mat-button id="2007" value = "2007" name="2007" (click) = "getSecondYearValue($event.target.value)" class="btn btn-success btn-sm button-size alignbutton">2007</button>
+                    </form>
+                    <form class="topmargin">
+                        <button mat-button id="2008" value = "2008" name="2008" (click) = "getThirdYearValue($event.target.value)" class="btn btn-success btn-sm button-size">2008</button>
+                        <button mat-button id="2009" value = "2009" name="2009" (click) = "getFourYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton button-size">2009</button>
+                    </form>
+                    <form class="topmargin">
+                        <button mat-button id="2010" value = "2010" name="2010" (click) = "getFiveYearValue($event.target.value)" class="btn btn-success btn-sm button-size">2010</button>
+                        <button mat-button id="2011" value = "2011" name="2011" (click) = "getSixYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton button-size">2011</button>
+                    </form >
+                    <form class="topmargin">
+                        <button mat-button id="2012" value = "2012" name="2012" (click) = "getSevenYearValue($event.target.value)" class="btn btn-success btn-sm button-size">2012</button>
+                        <button mat-button id="2013" value = "2013" name="2013" (click) = "getEightYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton button-size">2013</button>
+                    </form>
+                    <form class="topmargin"> 
+                        <button mat-button id="2014" value = "2014" name="2014" (click) = "getNineYearValue($event.target.value)" class="btn btn-success btn-sm button-size">2014</button>
+                        <button mat-button id="2015" value = "2015" name="2015" (click) = "getTenYearValue($event.target.value)" class="btn btn-success btn-sm button-size alignbutton">2015</button>
+                    </form>
+                    <form class="topmargin">
+                        <button mat-button id="2016" value = "2016" name="2016" (click) = "getElevenYearValue($event.target.value)" class="btn btn-success btn-sm button-size">2016</button>
+                        <button mat-button id="2017" value = "2017" name="2017" (click) = "getTwelveYearValue($event.target.value)" class="btn btn-success btn-sm button-size alignbutton">2017</button>
+                    </form>
+                    <form class="topmargin">
+                        <button mat-button id="2018" value = "2018" name="2018" (click) = "getThirteenYearValue($event.target.value)" class="btn btn-success btn-sm button-size">2018</button>
+                        <button mat-button id="2019" value = "2019" name="2019" (click) = "getFourteenYearValue($event.target.value)" class="btn btn-success btn-sm alignbutton button-size">2019</button>
+                    </form>
+                    <form class="topmargin">
+                        <button mat-button id="2020" value = "2020" name="2020" (click) = "getFifteenYearValue($event.target.value)" class="btn btn-success btn-sm button-size">2020</button>
+                    </form>
+                </div>
+                <div style="margin-top: 10px">
+                    <u style="color: darkgreen;"><span class="successLaunch">Successful Launch</span></u> 
+                </div>
+                <form class="topmargin">
+                    <button mat-button id="SLT" value = "true" name="true" (click) = "getLaunchTrueValue($event.target.value)" class="btn btn-success btn-sm button-size">True</button>
+                    <button mat-button  id="SLF" value = "false" name="false" (click) = "getLaunchFalseValue($event.target.value)" class="btn btn-success btn-sm alignbutton button-size">False</button>
+                </form>
+                <div style="margin-top: 10px">
+                    <u style="color: darkgreen;"><span class="successLaunch">Successful Landing</span></u> 
+                </div>
+                <form class="topmargin">
+                    <button mat-button id="landT" value = "true" name="true" (click) = "getLandTrueValue($event.target.value)" class="btn btn-success btn-sm button-size">True</button>
+                    <button mat-button id="landF" value = "false" name="false" (click) = "getLandFalseValue($event.target.value)" class="btn btn-success btn-sm alignbutton button-size">False</button>
+                </form>
+            </mat-card>
+        </div>
+        <div class="col-sm-10 responsive">
+             <div *ngFor = "let item of spacexAllData; index as i" class="cardresponsive">
+                <mat-card class="example-card">
+                    <mat-card-content>
+                        <span><img mat-card-image src= {{item.links.mission_patch}} alt={{item.rocket.rocket_name}}></span><br>
+                        <div class="tilesClass">
+                        <div style="color: blue;"><b>{{item.mission_name}} # {{item.flight_number}}</b></div><br>
+                          <div><b>Mission IDs:-</b> <label style="color: blue;"><ul *ngFor = "let id of item.mission_id"><li>{{id}}</li></ul></label></div>
+                          <div><b>Launch Year:-</b> <label style="color: blue;">{{item.launch_year}}</label></div>
+                          <div><b>Successful Launch:-</b><label style="color: blue;">{{item.launch_success}}</label></div>
+                          <div><b>Successful Landing:-</b><label style="color: blue;">{{item.rocket.first_stage.cores[0].land_success}}</label></div>
+                        </div>
+                        </mat-card-content>
+                </mat-card>
+              </div>
+              <div class="nodata" *ngIf = "openerrordialog == true">
+                <b>No data found for the selected filter. Please modify your search.</b>
+            </div> 
+        </div>  
+    </div>
+</div>
